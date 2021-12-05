@@ -3,7 +3,7 @@ import Feed from "../components/Feed"
 import Sidebar from "../components/Sidebar"
 
 import {getProviders,getSession,useSession} from "next-auth/react"
-import Login from "../components/login";
+import Login from "../components/Login";
 import Modal from "../components/Modal";
 import { useRecoilState } from "recoil";
 import { modalState } from "../atom/modalAtom";
@@ -30,7 +30,10 @@ export default function Home({trendingResults,followResults,providers}) {
         <Sidebar />
         <Feed />
         
-        {/* Widget */}
+        <Widgets
+            trendingResults={trendingResults}
+            followResults={followResults}
+          />
 
          { isOpen && <Modal />}
 
